@@ -4,15 +4,30 @@ import requests # to make requests for https package - need to install request p
 from dotenv import load_dotenv
 
 import json #use to convert json string to dictionary #module don't need to install in virtual part of python
-import datetime #module
-import calendar # module
 import csv # module
 import os # module
 import statistics # statistic module
-import pandas
+
 
 load_dotenv() #> loads contents of the .env file into the script's environment
 
+
+api_key = os.environ.get("NEWS_API_KEY")
+
+url = f"https://newsapi.org/v2/everything?q=Apple&from=2019-06-27&language=en&sortBy=popularity&apiKey={api_key}"
+
+response = requests.get(url)
+
+print(type(response)) #<class 'requests.models.Response'>
+print(response.status_code) #200
+
+#print(response.text)
+print(response.json())
+print(type(response.text))
+
+#parsed_response =json.loads(response.text)
+
+#print r.json
 
 #print("-------------------------")
 #print("SELECTED GOOGLE SEARCH: ")

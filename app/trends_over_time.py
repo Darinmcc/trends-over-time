@@ -1,7 +1,13 @@
-"News"
+#"News"
 
 import requests # to make requests for https package - need to install request package in virtual environme
 from dotenv import load_dotenv
+from pprint import pprint
+#####
+##
+#
+#
+
 
 import json #use to convert json string to dictionary #module don't need to install in virtual part of python
 import csv # module
@@ -26,7 +32,13 @@ response = requests.get(url)
 
 parsed_response =json.loads(response.text) # variable, parse str to dict
 
-print(type(parsed_response)
+print(type(parsed_response))
+
+print(parsed_response.keys()) #= top keys
+print(parsed_response["articles"][1])
+
+
+
 #print(parsed_reponse.keys()) #= top keys
 #parsed_response["Meta Data"].keys()
 
@@ -51,7 +63,7 @@ print(type(parsed_response)
 #print("RECENT LOW: $99,000.00")
 #print("-------------------------")
 #print("RECOMMENDATION: BUY!")
-#print("RECOMMENDATION REASON: TODO")
+#print("RECOMMENDATION REASON: ")
 #print("-------------------------")
 #print("HAPPY INVESTING!")
 #print("-------------------------")

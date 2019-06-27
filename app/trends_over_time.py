@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import json #use to convert json string to dictionary #module don't need to install in virtual part of python
 import csv # module
 import os # module
-import statistics # statistic module
+
 
 
 load_dotenv() #> loads contents of the .env file into the script's environment
@@ -18,16 +18,26 @@ url = f"https://newsapi.org/v2/everything?q=Apple&from=2019-06-27&language=en&so
 
 response = requests.get(url)
 
-print(type(response)) #<class 'requests.models.Response'>
-print(response.status_code) #200
-
+#print(type(response)) #<class 'requests.models.Response'>
+#print(response.status_code) #200
+#print(type(response.text))
 #print(response.text)
-print(response.json())
-print(type(response.text))
+#print(response.json())
 
-#parsed_response =json.loads(response.text)
+parsed_response =json.loads(response.text) # variable, parse str to dict
 
-#print r.json
+print(type(parsed_response)
+#print(parsed_reponse.keys()) #= top keys
+#parsed_response["Meta Data"].keys()
+
+
+#create a dictionary for each term and source
+
+#My search terms
+#my sources for each search terms
+#send an e-mail
+
+
 
 #print("-------------------------")
 #print("SELECTED GOOGLE SEARCH: ")
